@@ -1,0 +1,184 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+
+$navbar-inverse-link-color: #5AADBB;
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+$base-font: 'Open Sans';
+$base-size: 13px;
+$menu-size: 200px;
+$brand-primary: #337ab7;
+$brand-success: #5cb85c;
+$brand-info: #5bc0de;
+$brand-warning: #f0ad4e;
+$brand-danger: #d9534f;
+$border-radius-base: 0px;
+$border-radius-large: 0px;
+$border-radius-small: 0px;
+
+$input-group-addon-bg: #FFF;
+
+$brand-primary-light: lighten($brand-primary, 10%) !default;
+$brand-primary-dark: darken($brand-primary, 10%) !default;
+$brand-danger-light: lighten($brand-danger, 10%) !default;
+$brand-danger-dark: darken($brand-danger, 10%) !default;
+$brand-success-light: lighten($brand-success, 10%) !default;
+$brand-success-dark: darken($brand-success, 10%) !default;
+$brand-info-light: lighten($brand-info, 10%) !default;
+$brand-info-dark: darken($brand-info, 10%) !default;
+$brand-warning-light: lighten($brand-warning, 10%) !default;
+$brand-warning-dark: darken($brand-warning, 10%) !default;
+
+$app-clear-bg: #fff;
+$app-clear-color: #555;
+
+$app-normal-bg: #555;
+$app-normal-color: #fff;
+
+$app-light-bg: #E9E9E9;
+$app-light-color: #555;
+
+$app-dark-bg: darken($app-normal-bg, 10%);
+$app-dark-color: #fff;
+
+$app-accent: rgb(255, 134, 54);
+$app-accent-light: lighten($app-accent, 10%) !default;
+$app-accent-dark: darken($app-accent, 10%) !default;
+$app-accent-color: #fff;
+
+$app-dialog-bg: #F9F9F9;
+$app-dialog-color: #555;
+
+.col-primary {
+    color: $brand-primary;
+}
+
+.col-info {
+    color: $brand-info;
+}
+
+.col-success {
+    color: $brand-success;
+}
+
+
+.col-danger {
+    color: $brand-danger;
+}
+
+.col-warning {
+    color: $brand-warning;
+}
+
+
+/* #region Mixin Definitions*/
+
+@mixin vendor-prefix($property, $value, $vendors: webkit moz ms o) {
+    @if $vendors {
+        @each $vendor in $vendors {
+            #{"-" + $vendor + "-" + $property}: #{$value};
+        }
+    }
+    #{$property}: #{$value};
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    -moz-border-radius-bottomright: $radius;
+    -moz-border-radius-bottomleft: $radius;
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin pa-blue-trans($prefix, $trans) {
+    #{$prefix}color: rgba(8, 31, 44, $trans);
+}
+
+@mixin transparent-background($color, $alpha) {
+    $rgba: rgba($color, $alpha);
+    $ie-hex-str: ie-hex-str($rgba);
+    @extend .transparent-background;
+    background-color: $rgba;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str}, endColorstr=#{$ie-hex-str});
+}
+
+@mixin respond-to($breakpoint) {
+    //note that these are bootstrap 3 break points
+    @if $breakpoint=="extra-small" {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+    @else if $breakpoint=="small" {
+        @media (min-width: 767px) {
+            @content;
+        }
+    }
+    @else if $breakpoint=="medium" {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+    @else if $breakpoint=="large" {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+}
+
+
+/*#endregion*/
+
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+
+// bower:scss
+// endbower
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.thumbnail {
+    height: 200px;
+    img.pull-right {
+        width: 50px;
+    }
+}
+
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+
+// injector
+// endinjector

@@ -1,0 +1,3 @@
+<div class="alert" ng-repeat="item in vm.response.responseMessages" ng-class="{'alert-info' : item.typeId == 1, 'alert-warning' : item.typeId == 2, 'alert-danger' : item.typeId == 3}">
+    {{item.message}}
+</div>

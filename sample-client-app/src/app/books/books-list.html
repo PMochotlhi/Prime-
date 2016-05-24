@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="panel panel-list panel-info">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <a ui-sref="books/add" class="btn-action btn-info">
+                        <i class="glyphicon glyphicon-plus"></i>
+                        <span><b>Add</b><br />Book</span>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-8">
+                    <div class="action-container">
+                        <div class="action-area">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
+                                <input type="text" class="form-control " placeholder="Search" aria-describedby="basic-addon1" ng-model="vm.search.filter">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <gb-errormessages class="panel-body" response="vm.wsResponse"></gb-errormessages>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover table-dialog">
+                <thead>
+                    <tr>
+                        <th width="35%">Name</th>
+                        <th width="25%">ISBN</th>
+                        <th width="20%">Genre</th>
+                        <th width="20%">Author</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="bk in vm.wsResponse | filter : vm.search.filter" ng-click="vm.view(bk.id)">
+                        <td class="table-cell-left-padding">{{bk.name}}</td>
+                        <td class="table-cell-left-padding">{{bk.isbn}}</td>
+                        <td class="table-cell-left-padding">{{bk.genre}}</td>
+                        <td class="table-cell-left-padding">{{bk.author}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

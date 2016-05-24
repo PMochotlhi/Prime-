@@ -1,0 +1,66 @@
+.app-menu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top:0;
+    bottom: 0;
+    width: 0px;
+    z-index: 500;
+    
+    background-color: $app-light-bg;
+    overflow: hidden;
+    transition: width  0.5s ease-in-out;
+    
+    & .glyphicon {
+        margin: 0 18px 0 12px;
+        width: 22px;
+    }
+    
+    & .list-group {
+        border-radius: 0;
+        width: $menu-size;
+        position: absolute;
+        right: 0;
+        top: 100px;
+        text-align: left;
+    }
+    & .list-group-item {
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        cursor: pointer;
+        
+        &.active {
+            background-color: $app-accent;
+            color: $app-dark-color;
+        }
+        &:hover {
+            background-color: $app-accent-light;
+            color: $app-dark-color;
+        }
+    }
+    
+    &.active {
+        width: $menu-size;
+    }
+}
+
+
+.mainView {
+    position: relative;
+    transition: margin-left  0.5s ease-in-out;
+}
+.mainView.menu {
+    margin-left: $menu-size;
+}
+
+.mainViewWrapper {
+    width: 100%;
+    position: relative;
+    padding: 0 !important;
+    transition: margin-right  0.5s ease-in-out;
+}
+
+.mainView.menu .mainViewWrapper {
+    margin-right: -$menu-size;
+}

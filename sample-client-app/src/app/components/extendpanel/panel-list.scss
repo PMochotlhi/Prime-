@@ -1,0 +1,318 @@
+.panel-list {
+    & .btn-action {
+        width: 100%;
+        height: 106px !important;
+        display: inline-block;
+        border: 0;
+        background-color: $app-clear-bg;
+        text-transform: uppercase;
+        font-size: 20px;
+        position: relative;
+        padding-left: 110px;
+        line-height: 20px;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        & i {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 106px;
+            height: 106px;
+            line-height: 106px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 48px;
+            @include transition(all .3s ease);
+        }
+        & span {
+            padding-top: 30px;
+            padding-left: 12px;
+            display: inline-block;
+        }
+        &:hover {
+            color: black;
+            text-decoration: none;
+            @include transition(all .3s ease);
+        }
+        &:hover i,
+        &.active i {
+            text-decoration: none;
+            @include vendor-prefix(box-shadow, 0 0 0 0 rgba(0, 0, 0, 0.3), webkit moz);
+        }
+        &:hover i.active {
+            text-decoration: none;
+            @include vendor-prefix(box-shadow, 0 0 0 0 rgba(0, 0, 0, 0.3), webkit moz);
+        }
+    }
+    & .btn-action.btn-default {
+        background-color: transparent;
+        color: $app-dark-color;
+        &:hover {
+            color: $app-dark-color;
+        }
+        & i {
+            background-color: $app-dark-bg;
+        }
+        &:hover i,
+        &.active i {
+            background-color: $app-accent-light;
+            color: $app-dark-color;
+        }
+        &:hover i.active {
+            background-color: $app-accent;
+            color: $app-dark-color;
+        }
+    }
+    & .btn-action.btn-primary {
+        background-color: $app-clear-bg !important;
+        color: $app-clear-color !important;
+        &:hover {
+            color: $app-clear-color !important;
+        }
+        & i {
+            background-color: $brand-primary-dark !important;
+            color: $app-dark-color;
+        }
+        &:hover i {
+            background-color: $brand-primary !important;
+            color: $app-dark-color !important;
+        }
+        &:hover i.active {
+            background-color: $brand-primary-light !important;
+            color: $app-dark-color !important;
+        }
+    }
+    & .btn-action.btn-info {
+        background-color: $app-clear-bg !important;
+        color: $app-clear-color !important;
+        &:hover {
+            color: $app-clear-color !important;
+        }
+        & i {
+            background-color: $brand-info-dark !important;
+            color: $app-dark-color;
+        }
+        &:hover i {
+            background-color: $brand-info !important;
+            color: $app-dark-color !important;
+        }
+        &:hover i.active {
+            background-color: $brand-info-light !important;
+            color: $app-dark-color !important;
+        }
+    }
+    & .btn-action.btn-warning {
+        background-color: $app-clear-bg !important;
+        color: $app-clear-color !important;
+        &:hover {
+            color: $app-clear-color !important;
+        }
+        & i {
+            background-color: $brand-warning-dark !important;
+            color: $app-dark-color;
+        }
+        &:hover i {
+            background-color: $brand-warning !important;
+            color: $app-dark-color !important;
+        }
+        &:hover i.active {
+            background-color: $brand-warning-light !important;
+            color: $app-dark-color !important;
+        }
+    }
+    & .btn-action.btn-success {
+        background-color: $app-clear-bg !important;
+        color: $app-clear-color !important;
+        &:hover {
+            color: $app-clear-color !important;
+        }
+        & i {
+            background-color: $brand-success-dark !important;
+            color: $app-dark-color;
+        }
+        &:hover i {
+            background-color: $brand-success !important;
+            color: $app-dark-color !important;
+        }
+        &:hover i.active {
+            background-color: $brand-success-light !important;
+            color: $app-dark-color !important;
+        }
+    }
+    & .btn-action.btn-danger {
+        background-color: $app-clear-bg !important;
+        color: $app-clear-color !important;
+        &:hover {
+            color: $app-clear-color !important;
+        }
+        & i {
+            background-color: $brand-danger-dark !important;
+            color: $app-dark-color;
+        }
+        &:hover i {
+            background-color: $brand-danger !important;
+            color: $app-dark-color !important;
+        }
+        &:hover i.active {
+            background-color: $brand-danger-light !important;
+            color: $app-dark-color !important;
+        }
+    }
+}
+
+.panel-list table {
+    & th {
+        background-color: $app-normal-bg;
+        color: $app-normal-color;
+        font-weight: 300;
+        border-color: $app-normal-bg;
+        border: 0;
+        font-size: 12px;
+        vertical-align: middle!important;
+        height: 52px !important;
+        & > a {
+            padding-right: 10px;
+            position: relative;
+            display: block;
+            color: $app-dark-color !important;
+            text-decoration: none;
+        }
+        & > a:visited,
+        & > a:hover,
+        & > a:active {
+            color: $app-normal-color !important;
+            text-decoration: none;
+        }
+    }
+    & .grid-up-arrow {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        right: 0px;
+    }
+    & .grid-down-arrow {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        right: 0px;
+    }
+    & .grid-up-arrow:before {
+        content: "\2227";
+    }
+    & .grid-down-arrow:before {
+        content: "\2228";
+    }
+    & tr > *:first-child {
+        padding-left: 25px !important;
+    }
+}
+
+.panel-list > .table-responsive {
+    border-top: none !important;
+}
+
+.panel-list > .panel-heading {
+    background-color: $app-normal-bg;
+    color: $app-normal-color;
+    min-height: 52px;
+    padding: 0;
+    border: none;
+    border-bottom: 8px solid $app-accent;
+    & .row {
+        padding: 0;
+        margin: 0;
+        & > * {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+.panel-list {
+    &.panel-primary > .panel-heading {
+        border-bottom-color: $brand-primary !important;
+    }
+    &.panel-info > .panel-heading {
+        border-bottom-color: $brand-info !important;
+    }
+    &.panel-danger > .panel-heading {
+        border-bottom-color: $brand-danger !important;
+    }
+    &.panel-success > .panel-heading {
+        border-bottom-color: $brand-success !important;
+    }
+    &.panel-warning > .panel-heading {
+        border-bottom-color: $brand-warning !important;
+    }
+}
+
+.panel-list {
+    & .action-container {
+        position: relative;
+        height: 106px;
+        & .action-area {
+            position: absolute;
+            right: 8px;
+            bottom: 0px;
+            height: auto;
+            left: 48px;
+            padding: 8px 8px 0px 8px;
+            & .input-group {
+                color: white;
+                background-color: rgba(255,255,255,0.2);
+                margin-bottom: 0px;
+                & > .input-group-addon {
+                    color: white;
+                    border: none;
+                    background-color: transparent;
+                }
+                & > .input-group-btn > .btn {
+                    color: white;
+                    border: none;
+                    background-color: transparent;
+                }
+                & > input {
+                    color: white;
+                    border: none;
+                    background-color: transparent;
+                    box-shadow: none;
+                    
+                    &::-webkit-input-placeholder {
+                        color: rgba(255,255,255,1);
+                    }
+                    &:-moz-placeholder {
+                        /* Firefox 18- */
+                        color: rgba(255,255,255,1);
+                    }
+                    &::-moz-placeholder {
+                        /* Firefox 19+ */
+                        color: rgba(255,255,255,1);
+                    }
+                    &:-ms-input-placeholder {
+                        color: rgba(255,255,255,1);
+                    }
+                    
+                    &:focus {
+                       color: white; 
+                    }
+                }
+            }
+        }
+    }
+    &.panel-primary .action-area {
+        background-color: $brand-primary !important;
+    }
+    &.panel-info .action-area {
+        background-color: $brand-info !important;
+    }
+    &.panel-danger .action-area {
+        background-color: $brand-danger !important;
+    }
+    &.panel-success .action-area {
+        background-color: $brand-success !important;
+    }
+    &.panel-warning .action-area {
+        background-color: $brand-warning !important;
+    }
+}

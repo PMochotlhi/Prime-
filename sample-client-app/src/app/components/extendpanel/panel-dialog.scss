@@ -1,0 +1,44 @@
+
+.panel-dialog {
+    background-color: $app-dialog-bg;
+    border-radius: 0;
+    border-width: 0;
+    min-height: 440px;
+}
+
+.panel-dialog > .panel-heading {
+    background-color: $app-clear-bg;
+    min-height: 52px;
+}
+
+.panel-dialog > .panel-heading .panel-title {
+    line-height: 32px;
+}
+
+.panel-dialog > .panel-body.padded {
+    padding-top: 48px;
+    padding-bottom: 36px;
+}
+
+.dialog-ico {
+    display: block;
+    padding-top: 21px;
+    font-size: 46px;
+    line-height: 46px;
+    margin-left: 35px;
+    text-align: left;
+}
+
+.dot {
+    display: inline-block;
+    margin: 2px 12px 2px 0px;
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    background-color: $app-light-bg;
+    
+    &.active {
+        background-color: $app-accent;
+    }
+}
+

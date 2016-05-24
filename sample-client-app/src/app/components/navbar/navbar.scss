@@ -1,0 +1,55 @@
+.header-block {
+    position: relative;
+    margin-bottom: 14px;
+    padding-left: 0;
+    margin-left: 0;
+    z-index: 1000;
+    background-color: $app-clear-bg;
+    color: $app-clear-color;
+    & > .row {
+        padding: 0px;
+    }
+    & a {
+        text-decoration: none;
+        color: $app-clear-color;
+        @include transition(all .3s ease);
+        &:hover {
+            text-decoration: none;
+            color: $app-clear-color;
+        }
+    }
+    & img {
+        opacity: 0.8;
+        margin-bottom: 8px;
+    }
+}
+
+.page-title {
+    font-size: 26px;
+    line-height: 32px;
+    margin-left: 6px;
+    margin-top: 15px;
+}
+
+#menu-toggle {
+    padding: 8px 24px;
+    font-size: 20px;
+    color: $app-clear-color;
+}
+
+
+.user-name {
+    padding-top: 4px;
+    padding-right: 22px;
+}
+
+.title {
+    text-align: right;
+    color: $app-clear-color;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 24px;
+    & i {
+        font-size: 20px;
+    }
+}
